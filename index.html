@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daily Dice Hub | Monopoly GO Rewards</title>
+  <meta name="description" content="Check today's Monopoly GO rewards, free dice, events and sticker updates.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">🎲 Daily Dice Hub</div>
+  <a href="#rewards" class="nav-btn">Today's Rewards</a>
+</header>
+
+<main>
+
+  <section class="hero">
+
+    <div class="badge">🔥 DAILY UPDATE</div>
+
+    <h1>
+      Don't Miss Today's
+      <span>Monopoly GO Rewards</span>
+    </h1>
+
+    <p>
+      Discover today's free dice, rewards, events and sticker updates.
+      Updated regularly for Monopoly GO players.
+    </p>
+
+    <button class="main-btn" onclick="openReward()">
+      🎁 CHECK TODAY'S REWARDS
+    </button>
+
+    <div class="update">
+      ✓ Updated Daily &nbsp; • &nbsp; ⚡ Fast & Simple
+    </div>
+
+  </section>
+
+
+  <section id="rewards" class="cards">
+
+    <div class="card featured">
+      <div class="emoji">🎲</div>
+
+      <h2>Free Dice</h2>
+
+      <p>
+        Check the latest available free dice rewards.
+      </p>
+
+      <button onclick="openReward()" class="reward-btn">
+        CHECK FREE DICE
+      </button>
+    </div>
+
+
+    <div class="card">
+
+      <div class="emoji">🎁</div>
+
+      <h2>Daily Rewards</h2>
+
+      <p>
+        Discover today's available rewards and bonuses.
+      </p>
+
+      <button onclick="openReward()" class="reward-btn">
+        GET REWARD
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="emoji">🔥</div>
+
+      <h2>Today's Events</h2>
+
+      <p>
+        Stay updated with current events and limited-time activities.
+      </p>
+
+      <button onclick="openReward()" class="reward-btn">
+        VIEW EVENTS
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="emoji">⭐</div>
+
+      <h2>Sticker Updates</h2>
+
+      <p>
+        Find sticker updates, collection tips and trading information.
+      </p>
+
+      <button onclick="openReward()" class="reward-btn">
+        VIEW STICKERS
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <section class="how">
+
+    <h2>How It Works</h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <strong>01</strong>
+        <h3>Check Rewards</h3>
+        <p>Open today's available rewards.</p>
+      </div>
+
+      <div class="step">
+        <strong>02</strong>
+        <h3>Choose Your Reward</h3>
+        <p>Select the reward or update you want.</p>
+      </div>
+
+      <div class="step">
+        <strong>03</strong>
+        <h3>Continue</h3>
+        <p>Follow the available instructions.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="bottom">
+
+    <h2>Want More Daily Updates?</h2>
+
+    <p>
+      Check back regularly for new rewards and events.
+    </p>
+
+    <button onclick="openReward()" class="main-btn">
+      🎲 CHECK LATEST UPDATE
+    </button>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <p>
+    Daily Dice Hub is an independent fan-made information page.
+  </p>
+
+  <p>
+    Not affiliated with, sponsored by, or endorsed by Scopely or Hasbro.
+  </p>
+
+</footer>
+
+
+<!-- POPUP -->
+
+<div id="popup" class="popup">
+
+  <div class="popup-box">
+
+    <button class="close" onclick="closePopup()">×</button>
+
+    <div class="popup-icon">🎁</div>
+
+    <h2>Today's Reward</h2>
+
+    <p>
+      Your reward is ready. Continue to access today's update.
+    </p>
+
+    <button onclick="goToLocker()" class="main-btn">
+      CONTINUE
+    </button>
+
+    <small>
+      You will be redirected to the reward page.
+    </small>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
