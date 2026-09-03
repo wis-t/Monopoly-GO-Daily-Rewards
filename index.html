@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daily Dice Hub — fan-made rewards and events page.">
+  <title>Daily Dice Hub — Rewards & Events</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  🎲 DAILY FAN UPDATE <span>•</span> REWARDS & EVENTS
+</div>
+
+<header class="nav">
+  <a class="logo" href="#">
+    <span class="logo-dice">🎲</span>
+    <span>Daily<span class="accent">Dice</span></span>
+  </a>
+
+  <a class="mini-cta" href="#rewards">
+    Today's Update →
+  </a>
+</header>
+
+<main>
+
+<section class="hero">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+      <i></i> COMMUNITY REWARD HUB
+    </div>
+
+    <h1>
+      Roll into your<br>
+      <strong>daily rewards!</strong>
+    </h1>
+
+    <p class="lead">
+      A fast fan-made hub for checking dice, rewards,
+      events and sticker updates.
+    </p>
+
+    <div class="trust-row">
+      <span>✓ Updated regularly</span>
+      <span>✓ Fan-made</span>
+      <span>✓ Mobile friendly</span>
+    </div>
+
+    <button class="primary" data-open>
+      🎁 CHECK TODAY'S REWARD →
+    </button>
+
+    <div class="fineprint">
+      Independent fan page • Not an official Monopoly GO website
+    </div>
+
+  </div>
+
+  <div class="hero-art">
+
+    <div class="glow"></div>
+
+    <div class="board">
+
+      <div class="board-top">
+        DAILY<br>
+        <b>REWARD</b>
+      </div>
+
+      <div class="dice-big">🎲</div>
+
+      <div class="coin c1">★</div>
+      <div class="coin c2">★</div>
+
+      <div class="board-bottom">
+        ROLL • PLAY • REPEAT
+      </div>
+
+    </div>
+
+    <div class="float-card one">
+      🎁 <b>Reward</b>
+      <small>Ready to check</small>
+    </div>
+
+    <div class="float-card two">
+      🔥 <b>Event</b>
+      <small>Latest update</small>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="stats">
+
+  <div>
+    <b>DAILY</b>
+    <span>Updates</span>
+  </div>
+
+  <div>
+    <b>4</b>
+    <span>Content types</span>
+  </div>
+
+  <div>
+    <b>⚡ FAST</b>
+    <span>Mobile experience</span>
+  </div>
+
+  <div>
+    <b class="online">
+      <i></i> ONLINE
+    </b>
+    <span>Hub status</span>
+  </div>
+
+</section>
+
+
+<section id="rewards" class="section">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">
+        WHAT'S INSIDE
+      </div>
+
+      <h2>
+        Today's game hub
+      </h2>
+    </div>
+
+    <span class="pill">
+      FAN UPDATED
+    </span>
+
+  </div>
+
+
+  <div class="grid">
+
+    <article class="reward-card main-card">
+
+      <div class="card-icon">
+        🎲
+      </div>
+
+      <div class="tag">
+        POPULAR
+      </div>
+
+      <h3>
+        Free Dice
+      </h3>
+
+      <p>
+        Check the latest available dice information
+        and reward destination.
+      </p>
+
+      <button class="card-btn" data-open>
+        CHECK DICE →
+      </button>
+
+    </article>
+
+
+    <article class="reward-card">
+
+      <div class="card-icon">
+        🎁
+      </div>
+
+      <h3>
+        Daily Rewards
+      </h3>
+
+      <p>
+        Explore current bonuses and daily reward updates.
+      </p>
+
+      <button class="ghost-btn" data-open>
+        VIEW REWARDS →
+      </button>
+
+    </article>
+
+
+    <article class="reward-card">
+
+      <div class="card-icon">
+        🔥
+      </div>
+
+      <h3>
+        Events
+      </h3>
+
+      <p>
+        Keep up with current events and what to watch next.
+      </p>
+
+      <button class="ghost-btn" data-open>
+        VIEW EVENTS →
+      </button>
+
+    </article>
+
+
+    <article class="reward-card">
+
+      <div class="card-icon">
+        ⭐
+      </div>
+
+      <h3>
+        Stickers
+      </h3>
+
+      <p>
+        Sticker news, collection ideas and trading topics.
+      </p>
+
+      <button class="ghost-btn" data-open>
+        VIEW STICKERS →
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="progress-section">
+
+  <div>
+
+    <div class="eyebrow">
+      REWARD CHECK
+    </div>
+
+    <h2>
+      Preparing today's update
+    </h2>
+
+    <p>
+      Tap a reward button to open the configured destination.
+      The progress animation is only a visual page effect.
+    </p>
+
+  </div>
+
+
+  <div class="progress-box">
+
+    <div class="progress-label">
+      <span>CHECKING</span>
+      <b id="percent">0%</b>
+    </div>
+
+    <div class="bar">
+      <i id="bar"></i>
+    </div>
+
+    <div class="server">
+      <span>
+        <i></i> Page status
+      </span>
+
+      <b>READY</b>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="how">
+
+  <div class="eyebrow">
+    SIMPLE FLOW
+  </div>
+
+  <h2>
+    Three quick steps
+  </h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <b>01</b>
+      <strong>Check</strong>
+      <p>Open today's fan update.</p>
+    </div>
+
+    <div class="step">
+      <b>02</b>
+      <strong>Continue</strong>
+      <p>Review the available destination.</p>
+    </div>
+
+    <div class="step">
+      <b>03</b>
+      <strong>Claim</strong>
+      <p>Follow the instructions there.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="final-cta">
+
+  <div>
+
+    <div class="eyebrow">
+      READY TO ROLL?
+    </div>
+
+    <h2>
+      Check today's update 🎲
+    </h2>
+
+    <p>
+      Come back regularly for new fan updates.
+    </p>
+
+  </div>
+
+  <button class="primary" data-open>
+    CHECK TODAY'S REWARD →
+  </button>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <strong>
+    DailyDice Hub
+  </strong>
+
+  <p>
+    Independent fan-made information page.
+    Not affiliated with, sponsored by, or endorsed by
+    Scopely or Hasbro.
+  </p>
+
+</footer>
+
+
+<div class="modal" id="modal" aria-hidden="true">
+
+  <div class="modal-card">
+
+    <button class="close" data-close>
+      ×
+    </button>
+
+    <div class="modal-dice">
+      🎁
+    </div>
+
+    <div class="eyebrow">
+      TODAY'S UPDATE
+    </div>
+
+    <h2>
+      Reward destination ready
+    </h2>
+
+    <p>
+      You are about to continue to the destination
+      configured by the page owner.
+    </p>
+
+    <button class="primary full" id="continueBtn">
+      CONTINUE →
+    </button>
+
+    <small>
+      Fan-made page • Verify your destination before publishing.
+    </small>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
