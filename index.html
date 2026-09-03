@@ -1,45 +1,228 @@
-<div class="modal" id="verifyModal">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daily Rewards Fan Hub</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Cloudflare Turnstile -->
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer>
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    🎲 <span>DAILY REWARDS</span>
+  </div>
+
+  <div class="online">
+    🟢 24,853 Players Online
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-icon">🎩</div>
+
+  <div>
+    <small>DAILY REWARD HUB</small>
+
+    <h1>
+      PLAY MORE<br>
+      <span>GET MORE</span>
+    </h1>
+
+    <p>
+      Dice Rolls • Stickers • Rewards • Events
+    </p>
+  </div>
+
+</section>
+
+
+<nav class="tabs">
+
+  <button class="active">🎲<small>DICE ROLLS</small></button>
+  <button>🃏<small>STICKERS</small></button>
+  <button>🎁<small>REWARDS</small></button>
+  <button>🔥<small>EVENTS</small></button>
+
+</nav>
+
+
+<main>
+
+  <div class="title">
+    <b>1</b>
+
+    <div>
+      <h2>CHOOSE YOUR REWARD</h2>
+      <p>Select what you want.</p>
+    </div>
+  </div>
+
+
+  <section class="box">
+
+    <h3>🎲 DICE ROLLS</h3>
+
+    <div class="choices">
+
+      <label>
+        <input type="radio" name="reward" value="25 Dice Rolls" checked>
+        <div>
+          🎲
+          <strong>25</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="reward" value="100 Dice Rolls">
+        <div>
+          🎲🎲
+          <strong>100</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="reward" value="500 Dice Rolls">
+        <div>
+          🎲🎲🎲
+          <strong>500</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="reward" value="1000 Dice Rolls">
+        <div>
+          🎲🎲🎲🎲
+          <strong>1,000</strong>
+          <small>Dice Rolls</small>
+        </div>
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <div class="selected">
+
+    <b>2</b>
+
+    <div>
+      <h3>SELECTED REWARD</h3>
+      <p id="selectedReward">25 Dice Rolls</p>
+    </div>
+
+  </div>
+
+
+  <!-- IMPORTANT:
+       Clicking this opens verification.
+  -->
+
+  <button id="getReward" class="get-button">
+    🎁 GET MY REWARD
+    <span>→</span>
+  </button>
+
+</main>
+
+
+<!--
+================================================
+VERIFICATION MODAL
+
+Hidden when page loads.
+It ONLY appears after GET MY REWARD.
+================================================
+-->
+
+<div id="verifyModal" class="modal">
 
   <div class="verify-card">
 
-    <button class="close" id="closeVerify">×</button>
+    <button id="closeModal" class="close">
+      ×
+    </button>
 
-    <div class="verify-icon">🛡️</div>
+    <div class="shield">
+      🛡️
+    </div>
 
     <h2>VERIFY YOU'RE HUMAN</h2>
 
     <p>
-      Please complete the security check to continue.
+      Please complete the security check
+      to continue.
     </p>
 
-    <!-- REAL CLOUDFLARE TURNSTILE -->
-    <div
-      class="cf-turnstile"
-      data-sitekey="YOUR_TURNSTILE_SITE_KEY"
-      data-theme="light"
-      data-language="en"
-      data-callback="verificationSuccess"
-      data-expired-callback="verificationExpired"
-      data-error-callback="verificationError">
-    </div>
+
+    <!--
+      Replace YOUR_SITE_KEY with your
+      Cloudflare Turnstile site key.
+    -->
 
     <div
-      id="verifyStatus"
-      class="verify-status">
+      class="cf-turnstile"
+      data-sitekey="YOUR_SITE_KEY"
+      data-theme="light"
+      data-callback="turnstileSuccess"
+      data-expired-callback="turnstileExpired"
+      data-error-callback="turnstileError">
+    </div>
+
+
+    <div id="status" class="status">
       Verification required
     </div>
 
+
     <button
-      id="continueReward"
-      class="continue-button"
+      id="continueButton"
+      class="continue"
       disabled>
+
       CONTINUE →
+
     </button>
 
-    <small class="security-note">
+    <small class="protected">
       🔒 Protected by Cloudflare Turnstile
     </small>
 
   </div>
 
 </div>
+
+
+<footer>
+
+  <b>Daily Rewards Fan Hub</b>
+
+  <p>
+    This is an independent fan-made website.
+    It is not affiliated with or endorsed by
+    Scopely, Hasbro, or MONOPOLY GO.
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
