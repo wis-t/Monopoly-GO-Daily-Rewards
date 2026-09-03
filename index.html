@@ -1,602 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Rewards • Fan Page</title>
+<!-- Reward Button -->
+<button class="reward-btn" onclick="showReward()">
+    🎁 Get My Monopoly Reward
+</button>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Locker -->
+<div id="locker" class="locker-container">
+    <div class="locker-box">
+        <h3>🎁 Your Reward</h3>
+        <p>Complete the required step to continue.</p>
 
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header class="header">
-
-  <div class="menu">
-    ☰
-  </div>
-
-  <div class="brand">
-    <span>DAILY</span>
-    <strong>REWARDS</strong>
-  </div>
-
-  <div class="online">
-    <span class="dot"></span>
-    <div>
-      <small>PLAYERS ONLINE</small>
-      <b id="onlineNumber">24,853</b>
+        <div data-captcha-enable="true"></div>
     </div>
-  </div>
-
-</header>
-
-
-<!-- HERO -->
-<section class="hero">
-
-  <div class="cloud cloud-1"></div>
-  <div class="cloud cloud-2"></div>
-
-  <div class="hero-content">
-
-    <div class="mascot">
-      🎩
-    </div>
-
-    <div class="hero-text">
-
-      <div class="mini-title">
-        DAILY REWARD HUB
-      </div>
-
-      <h1>
-        PLAY MORE
-        <br>
-        <span>GET MORE</span>
-      </h1>
-
-      <p>
-        Dice Rolls • Stickers • Rewards • Events
-      </p>
-
-      <div class="hero-badges">
-        <span>🎲 Dice</span>
-        <span>🎁 Rewards</span>
-        <span>⭐ Stickers</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- NAVIGATION -->
-<nav class="tabs">
-
-  <button class="tab active" data-tab="dice">
-    <span>🎲</span>
-    <b>DICE ROLLS</b>
-  </button>
-
-  <button class="tab" data-tab="stickers">
-    <span>🃏</span>
-    <b>STICKERS</b>
-  </button>
-
-  <button class="tab" data-tab="rewards">
-    <span>🎁</span>
-    <b>REWARDS</b>
-  </button>
-
-  <button class="tab" data-tab="events">
-    <span>📅</span>
-    <b>EVENTS</b>
-  </button>
-
-</nav>
-
-
-<!-- MAIN -->
-<main class="container">
-
-  <div class="heading">
-
-    <span class="step-number">1</span>
-
-    <div>
-      <h2>CHOOSE YOUR REWARD</h2>
-
-      <p>
-        Select what you want and continue to the next step.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- DICE -->
-  <section class="reward-section blue-section" id="dice">
-
-    <div class="section-title">
-
-      <div class="big-icon">🎲</div>
-
-      <div>
-        <h3>DICE ROLLS</h3>
-        <p>Choose the amount of dice rolls:</p>
-      </div>
-
-    </div>
-
-
-    <div class="choices">
-
-      <label class="choice selected">
-        <input
-          type="radio"
-          name="dice"
-          value="25 Dice Rolls"
-          checked
-        >
-
-        <div class="choice-content">
-          <span class="dice-icon">🎲</span>
-          <strong>25</strong>
-          <small>Dice Rolls</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="dice"
-          value="100 Dice Rolls"
-        >
-
-        <div class="choice-content">
-          <span class="dice-stack">🎲🎲</span>
-          <strong>100</strong>
-          <small>Dice Rolls</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="dice"
-          value="500 Dice Rolls"
-        >
-
-        <div class="choice-content">
-          <span class="dice-stack">🎲🎲🎲</span>
-          <strong>500</strong>
-          <small>Dice Rolls</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="dice"
-          value="1000 Dice Rolls"
-        >
-
-        <div class="choice-content">
-          <span class="dice-stack">🎲🎲🎲🎲</span>
-          <strong>1,000</strong>
-          <small>Dice Rolls</small>
-        </div>
-      </label>
-
-    </div>
-
-  </section>
-
-
-  <!-- STICKERS -->
-  <section class="reward-section purple-section" id="stickers">
-
-    <div class="section-title">
-
-      <div class="big-icon">🃏</div>
-
-      <div>
-        <h3>STICKERS</h3>
-        <p>Choose your sticker pack:</p>
-      </div>
-
-    </div>
-
-
-    <div class="choices">
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="stickers"
-          value="1 Sticker Pack"
-        >
-
-        <div class="choice-content">
-          <span>🟢</span>
-          <strong>1</strong>
-          <small>Pack</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="stickers"
-          value="3 Sticker Packs"
-        >
-
-        <div class="choice-content">
-          <span>🔵</span>
-          <strong>3</strong>
-          <small>Packs</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="stickers"
-          value="5 Sticker Packs"
-        >
-
-        <div class="choice-content">
-          <span>🟣</span>
-          <strong>5</strong>
-          <small>Packs</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="stickers"
-          value="10 Sticker Packs"
-        >
-
-        <div class="choice-content">
-          <span>🟡</span>
-          <strong>10</strong>
-          <small>Packs</small>
-        </div>
-      </label>
-
-    </div>
-
-  </section>
-
-
-  <!-- REWARDS -->
-  <section class="reward-section green-section" id="rewards">
-
-    <div class="section-title">
-
-      <div class="big-icon">🎁</div>
-
-      <div>
-        <h3>REWARDS</h3>
-        <p>Choose your reward:</p>
-      </div>
-
-    </div>
-
-
-    <div class="choices">
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="reward"
-          value="Cash"
-        >
-
-        <div class="choice-content">
-          <span>💵</span>
-          <strong>Cash</strong>
-          <small>Reward</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="reward"
-          value="Megaways"
-        >
-
-        <div class="choice-content">
-          <span>🪙</span>
-          <strong>Megaways</strong>
-          <small>Reward</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="reward"
-          value="Boosts"
-        >
-
-        <div class="choice-content">
-          <span>⚡</span>
-          <strong>Boosts</strong>
-          <small>Reward</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="reward"
-          value="Leaderboard"
-        >
-
-        <div class="choice-content">
-          <span>🏆</span>
-          <strong>Leaderboard</strong>
-          <small>Reward</small>
-        </div>
-      </label>
-
-    </div>
-
-  </section>
-
-
-  <!-- EVENTS -->
-  <section class="reward-section yellow-section" id="events">
-
-    <div class="section-title">
-
-      <div class="big-icon">📅</div>
-
-      <div>
-        <h3>EVENTS</h3>
-        <p>Choose an event item:</p>
-      </div>
-
-    </div>
-
-
-    <div class="choices">
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="event"
-          value="Pickaxe"
-        >
-
-        <div class="choice-content">
-          <span>⛏️</span>
-          <strong>Pickaxe</strong>
-          <small>Event Item</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="event"
-          value="Flowers"
-        >
-
-        <div class="choice-content">
-          <span>🌸</span>
-          <strong>Flowers</strong>
-          <small>Event Item</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="event"
-          value="Gems"
-        >
-
-        <div class="choice-content">
-          <span>💎</span>
-          <strong>Gems</strong>
-          <small>Event Item</small>
-        </div>
-      </label>
-
-
-      <label class="choice">
-        <input
-          type="radio"
-          name="event"
-          value="Tokens"
-        >
-
-        <div class="choice-content">
-          <span>🪙</span>
-          <strong>Tokens</strong>
-          <small>Event Item</small>
-        </div>
-      </label>
-
-    </div>
-
-  </section>
-
-
-  <!-- STEP 2 -->
-  <section class="user-step">
-
-    <div class="step-number">
-      2
-    </div>
-
-    <div class="user-content">
-
-      <h3>
-        SELECTED REWARD
-      </h3>
-
-      <p id="selectedReward">
-        25 Dice Rolls
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-  <button
-    class="reward-button"
-    id="rewardButton"
-  >
-    <span>🎁</span>
-    GET MY REWARD
-    <b>→</b>
-  </button>
-
-
-  <!-- STATUS -->
-  <div class="status-box">
-
-    <span>ⓘ</span>
-
-    <p>
-      Follow the next steps to continue.
-    </p>
-
-  </div>
-
-
-  <!-- TRUST -->
-  <div class="trust">
-
-    <div>
-      <span>⚡</span>
-      <strong>FAST</strong>
-      <small>Quick process</small>
-    </div>
-
-    <div>
-      <span>🛡️</span>
-      <strong>SAFE</strong>
-      <small>No password required</small>
-    </div>
-
-    <div>
-      <span>❤️</span>
-      <strong>FAN MADE</strong>
-      <small>Community project</small>
-    </div>
-
-  </div>
-
-</main>
-
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-
-  <div class="modal-card">
-
-    <button
-      class="close"
-      id="closeModal"
-    >
-      ×
-    </button>
-
-
-    <div class="loading-icon">
-      🎲
-    </div>
-
-    <h2>
-      GETTING YOUR REWARD
-    </h2>
-
-    <p id="modalText">
-      Preparing your selected reward...
-    </p>
-
-
-    <div class="progress">
-
-      <div
-        class="progress-bar"
-        id="progressBar"
-      ></div>
-
-    </div>
-
-
-    <strong
-      class="progress-number"
-      id="progressNumber"
-    >
-      0%
-    </strong>
-
-
-    <button
-      class="continue-button"
-      id="continueButton"
-      style="display:none;"
-    >
-      CONTINUE →
-    </button>
-
-  </div>
-
 </div>
 
+<style>
+.reward-btn {
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f2c230, #e39b00);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #9a6500;
+    margin-top: 15px;
+}
 
-<!-- FOOTER -->
-<footer>
+.reward-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #9a6500;
+}
 
-  <strong>
-    Daily Rewards Fan Hub
-  </strong>
+.locker-container {
+    display: none;
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 16px;
+    background: #f7f7f7;
+    border: 2px solid #e1b62b;
+    animation: lockerShow .35s ease;
+}
 
-  <p>
-    This is an independent fan-made website.
-    It is not affiliated with, endorsed by, or sponsored by
-    Scopely, Hasbro, or MONOPOLY GO.
-  </p>
+.locker-box {
+    text-align: center;
+    color: #222;
+}
 
-  <small>
-    © 2026 Fan Community
-  </small>
+.locker-box h3 {
+    margin-bottom: 8px;
+}
 
-</footer>
+.locker-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
 
+@keyframes lockerShow {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 
-<script src="script.js"></script>
+<script>
+function showReward() {
+    const locker = document.getElementById("locker");
 
-</body>
-</html>
+    locker.style.display = "block";
+
+    locker.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+</script>
